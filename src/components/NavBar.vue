@@ -6,15 +6,21 @@
         <span class="fw-bold">AndroidDev</span>
       </router-link>
 
+      <!-- Бургер-меню — видно только на мобилках -->
       <button
-        class="navbar-toggler"
+        class="navbar-toggler custom-toggler d-lg-none"
         type="button"
+        @click="toggleActive"
+        :class="{ active: isActive }"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </button>
 
+      <!-- Навигационное меню -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item mx-2">
@@ -37,6 +43,14 @@
     </div>
   </nav>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+const isActive = ref(false)
+const toggleActive = () => {
+  isActive.value = !isActive.value
+}
+</script>
 
 <style scoped>
 .custom-navbar {
@@ -72,11 +86,42 @@
     0 0 20px var(--accent-secondary);
 }
 
-.navbar-toggler {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* === Бургер-меню === */
+.custom-toggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  padding: 4px;
+  border: 1px solid white;
+  background-color: transparent;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  border-radius: 6px;
 }
 
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0.25rem rgba(3, 218, 197, 0.25);
+.custom-toggler:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 0.25rem rgba(3, 218, 197, 0.4);
+}
+
+.custom-toggler .bar {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+  transition: background-color 0.3s ease;
+}
+
+/* Активное состояние — голубые полоски и рамка */
+.custom-toggler.active {
+  border-color: var(--accent-primary);
+}
+
+.custom-toggler.active .bar {
+  background-color: var(--accent-primary);
 }
 </style>
