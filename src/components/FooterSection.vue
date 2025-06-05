@@ -33,7 +33,7 @@
                 <router-link to="/projects" class="nav-link-footer">Проекты</router-link>
               </li>
               <li>
-                <router-link to="/contact" class="nav-link-footer">Контакты</router-link>
+                <router-link to="/about" class="nav-link-footer">Обо мне</router-link>
               </li>
             </ul>
           </div>
@@ -99,22 +99,6 @@
           class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-custom small"
         >
           <p class="mb-2 mb-md-0">&copy; 2025 AndroidDev Portfolio. Все права защищены.</p>
-          <div class="d-flex gap-3">
-            <a
-              href="https://github.com/elena-zavadskaya"
-              class="social-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="bi bi-github"></i
-            ></a>
-            <a
-              href="https://t.me/mantikkora"
-              class="social-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="bi bi-telegram"></i
-            ></a>
-          </div>
         </div>
       </div>
     </div>

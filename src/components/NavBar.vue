@@ -6,34 +6,30 @@
         <span class="fw-bold">AndroidDev</span>
       </router-link>
 
-      <!-- Бургер-меню — видно только на мобилках -->
       <button
-        class="navbar-toggler custom-toggler d-lg-none"
+        class="navbar-toggler d-lg-none custom-toggler"
         type="button"
         @click="toggleActive"
         :class="{ active: isActive }"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
       >
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
 
-      <!-- Навигационное меню -->
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div :class="['collapse navbar-collapse', { show: isActive }]" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-2" @click="closeMenu">
             <router-link to="/" class="nav-link position-relative" active-class="active">
               Главная
             </router-link>
           </li>
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-2" @click="closeMenu">
             <router-link to="/projects" class="nav-link position-relative" active-class="active">
               Проекты
             </router-link>
           </li>
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-2" @click="closeMenu">
             <router-link to="/about" class="nav-link position-relative" active-class="active">
               Обо мне
             </router-link>
@@ -46,9 +42,13 @@
 
 <script setup>
 import { ref } from 'vue'
+
 const isActive = ref(false)
 const toggleActive = () => {
   isActive.value = !isActive.value
+}
+const closeMenu = () => {
+  isActive.value = false
 }
 </script>
 
@@ -86,26 +86,24 @@ const toggleActive = () => {
     0 0 20px var(--accent-secondary);
 }
 
-/* === Бургер-меню === */
 .custom-toggler {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 22px;
+  align-items: center;
+  width: 30px;
+  height: 24px;
   padding: 4px;
-  border: 1px solid white;
-  background-color: transparent;
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-  border-radius: 6px;
+  border: 1px solid white !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .custom-toggler:focus {
   outline: none;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 0.25rem rgba(3, 218, 197, 0.4);
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(3, 218, 197, 0.4) !important;
 }
 
 .custom-toggler .bar {
@@ -116,12 +114,15 @@ const toggleActive = () => {
   transition: background-color 0.3s ease;
 }
 
-/* Активное состояние — голубые полоски и рамка */
 .custom-toggler.active {
-  border-color: var(--accent-primary);
+  border-color: var(--accent-primary) !important;
 }
 
 .custom-toggler.active .bar {
   background-color: var(--accent-primary);
+}
+
+.navbar-toggler-icon {
+  display: none !important;
 }
 </style>

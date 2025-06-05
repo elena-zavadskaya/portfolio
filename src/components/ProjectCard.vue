@@ -1,5 +1,9 @@
 <template>
-  <div class="card-tech h-100 d-flex flex-column overflow-hidden position-relative">
+  <div
+    class="card-tech h-100 d-flex flex-column overflow-hidden position-relative"
+    @click="handleCardClick"
+    style="cursor: pointer"
+  >
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark" style="z-index: -1"></div>
 
     <div class="card-img-container position-relative overflow-hidden">
@@ -32,10 +36,15 @@
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-sm btn-neon"
+          @click.stop
         >
           Код
         </a>
-        <router-link :to="`/projects/${project.id}`" class="btn btn-sm btn-outline-light">
+        <router-link
+          :to="`/projects/${project.id}`"
+          class="btn btn-sm btn-outline-light"
+          @click.stop
+        >
           Подробнее
         </router-link>
       </div>
@@ -44,6 +53,8 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
 const { project } = defineProps({
   project: {
     type: Object,
@@ -60,6 +71,12 @@ const { project } = defineProps({
     }),
   },
 })
+
+const router = useRouter()
+
+const handleCardClick = () => {
+  router.push(`/projects/${project.id}`)
+}
 </script>
 
 <style scoped>
@@ -94,14 +111,12 @@ const { project } = defineProps({
   line-height: 1.5em;
 }
 
-/* Контейнер для изображения */
 .card-img-container {
   height: 200px;
   position: relative;
   overflow: hidden;
 }
 
-/* Стили для изображения */
 .card-image {
   width: 100%;
   height: 100%;
@@ -114,7 +129,6 @@ const { project } = defineProps({
   transform: scale(1.05);
 }
 
-/* Наложение для иконки */
 .overlay {
   position: absolute;
   top: 0;
