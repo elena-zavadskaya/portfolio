@@ -22,6 +22,12 @@ const routes = [
     name: 'About',
     component: () => import('@/views/AboutMe.vue'),
   },
+  // Добавляем новый маршрут для страницы сертификата
+  {
+    path: '/certificate',
+    name: 'Certificate',
+    component: () => import('@/views/CertificateView.vue'),
+  },
 ]
 
 const router = createRouter({

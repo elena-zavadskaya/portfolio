@@ -80,10 +80,10 @@ import { ref, onMounted } from 'vue'
 
 const technologies = ref([
   { name: 'Kotlin', icon: 'bi-code-slash' },
-  { name: 'Jetpack Compose', icon: 'bi-layout-wtf' },
+  { name: 'Coroutines', icon: 'bi-layout-wtf' }, //Jetpack Compose
   { name: 'Android SDK', icon: 'bi-phone' },
   { name: 'MVVM', icon: 'bi-diagram-3' },
-  { name: 'Firebase', icon: 'bi-cloud' },
+  { name: 'Koin', icon: 'bi-cloud' }, //Firebase
   { name: 'Retrofit', icon: 'bi-plug' },
 ])
 

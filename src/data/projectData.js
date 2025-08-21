@@ -2,10 +2,54 @@
 export const allProjects = [
   {
     id: 1,
+    title: 'BINExplorer',
+    description:
+      'Приложение для проверки информации о банковских картах по BIN-номеру (первые 6 цифр).',
+    tags: [
+      'Kotlin',
+      'MVVM',
+      'Clean Architecture',
+      'Retrofit',
+      'Room',
+      'Coroutines',
+      'REST API',
+      'Jetpack Compose',
+      'Hilt',
+    ],
+    imageUrl: '/images/binexplorer.jpg',
+    icon: 'bi-credit-card',
+    gradient: ['#ff6b6b', '#4ecdc4'],
+    codeUrl: 'https://github.com/elena-zavadskaya/BINExplorer',
+    showCodeButton: true,
+  },
+  {
+    id: 2,
+    title: 'RickAndMortyApp',
+    description:
+      'Приложение для просмотра информации о персонажах, локациях и эпизодах вселенной Рика и Морти.',
+    tags: [
+      'Kotlin',
+      'MVVM',
+      'Clean Architecture',
+      'Retrofit',
+      'Room',
+      'Coroutines',
+      'REST API',
+      'Jetpack Compose',
+      'Hilt',
+    ],
+    imageUrl: '/images/rickandmorty.jpg',
+    icon: 'bi-stars',
+    gradient: ['#00b09b', '#96c93d'],
+    codeUrl: 'https://github.com/elena-zavadskaya/rickandmorty-android-app',
+    showCodeButton: true,
+  },
+  {
+    id: 3,
     title: 'PlaylistMaker',
     description:
       'Мобильное приложение для прослушивания аудио с функциями поиска, плейлистов и плеера.',
-    tags: ['Kotlin', 'MVVM', 'Retrofit', 'Room'],
+    tags: ['Kotlin', 'MVVM', 'Clean Architecture', 'Retrofit', 'Room', 'Coroutines', 'REST API'],
     imageUrl: '/images/playlistmaker.jpg',
     icon: 'bi-music-note-list',
     gradient: ['#8e2de2', '#4a00e0'],
@@ -13,11 +57,11 @@ export const allProjects = [
     showCodeButton: true,
   },
   {
-    id: 2,
+    id: 4,
     title: 'PocketJob',
     description:
       'Android-приложение для поиска вакансий с фильтрами и сохранением избранных предложений.',
-    tags: ['Kotlin', 'Compose', 'MVVM', 'REST API'],
+    tags: ['Kotlin', 'MVVM', 'Clean Architecture', 'Retrofit', 'Room', 'Coroutines', 'REST API'],
     imageUrl: '/images/pocketjob.jpg',
     icon: 'bi-briefcase',
     gradient: ['#00c6ff', '#0072ff'],
@@ -25,11 +69,11 @@ export const allProjects = [
     showCodeButton: true,
   },
   {
-    id: 3,
+    id: 5,
     title: 'E.S.S.E. Design & Decoration',
     description:
       'Сайт для дизайн-бюро, специализирующегося на дизайне интерьеров, с портфолио работ и контактной информацией.',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+    tags: ['Vue.js', 'Vite', 'HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
     imageUrl: '/images/esse-design.jpg',
     icon: 'bi-brush',
     gradient: ['#D4A017', '#B8860B'],
@@ -38,7 +82,7 @@ export const allProjects = [
     liveUrl: 'https://esse-design-example.com',
   },
   {
-    id: 4,
+    id: 6,
     title: 'Когнитивные тесты',
     description:
       'Веб-приложение для прохождения психологических и когнитивных тестов с сохранением результатов.',
@@ -51,7 +95,7 @@ export const allProjects = [
     liveUrl: 'https://svetasy.pythonanywhere.com/Login',
   },
   {
-    id: 5,
+    id: 7,
     title: 'Система тестирования студентов',
     description:
       'Веб-приложение для преподавателей на Django и Telegram-бот для студентов, позволяющий создавать и проходить тесты.',
@@ -63,7 +107,7 @@ export const allProjects = [
     showCodeButton: true,
   },
   {
-    id: 6,
+    id: 8,
     title: '3D-корзина с яблоками',
     description: 'Реалистичная 3D-модель корзины с яблоками, созданная в Blender.',
     tags: ['Blender', '3D Modeling', 'Rendering'],
@@ -73,7 +117,7 @@ export const allProjects = [
     showCodeButton: false,
   },
   {
-    id: 7,
+    id: 9,
     title: '3D-модель домика',
     description: 'Детализированная 3D-модель дома с реалистичным эффектом воды.',
     tags: ['Blender', '3D Modeling', 'Water Effects'],
@@ -87,13 +131,24 @@ export const allProjects = [
 // Функции для каждого проекта
 export const projectFeatures = {
   1: [
+    'Проверка информации о банковской карте по BIN-номеру',
+    'Определение типа карты (Visa, Mastercard и др.)',
+    'Определение банка-эмитента и страны',
+    'История последних проверок',
+  ],
+  2: [
+    'Просмотр персонажей',
+    'Поиск и фильтрация персонажей',
+    'Пагинация для навигации по большому количеству данных',
+  ],
+  3: [
     'Поиск треков по названию, исполнителю или альбому',
     'Прослушивание 30-секундных превью треков',
     'Создание и управление плейлистами',
     'Добавление треков в избранное',
     'Поделиться плейлистом с друзьями',
   ],
-  2: [
+  4: [
     'Поиск вакансий по различным критериям',
     'Фильтрация по стране, региону и отрасли',
     'Фильтрация по уровню зарплаты',
@@ -101,7 +156,7 @@ export const projectFeatures = {
     'Поделиться вакансией с другими',
     'Просмотр подробной информации о вакансии',
   ],
-  3: [
+  5: [
     'Полностью самостоятельная разработка от концепции до реализации',
     'Тесное взаимодействие с заказчиком для сбора требований и внесения правок',
     'Оптимизация тяжелых изображений портфолио для улучшения производительности',
@@ -110,7 +165,7 @@ export const projectFeatures = {
     'Портфолио с галереей проектов и фильтрацией',
     'Контактная форма с валидацией и отправкой на email',
   ],
-  4: [
+  6: [
     'Регистрация и аутентификация пользователей',
     'Список доступных психологических тестов',
     'Прохождение тестов с сохранением результатов',
@@ -118,7 +173,7 @@ export const projectFeatures = {
     'Анкета пользователя с персональными данными',
     'Административная панель для управления тестами',
   ],
-  5: [
+  7: [
     'Веб-интерфейс для преподавателей',
     'Регистрация и аутентификация преподавателей',
     'Создание и редактирование тестов',
@@ -130,14 +185,14 @@ export const projectFeatures = {
     'Просмотр результатов после прохождения',
     'Хранение данных в MySQL',
   ],
-  6: [
+  8: [
     'Создание реалистичной модели корзины с яблоками',
     'Использование текстур для придания естественного вида',
     'Анимация ткани, накрывающей корзину',
     'Рендеринг сцены с использованием реалистичного освещения',
     'Экспорт модели в различные форматы',
   ],
-  7: [
+  9: [
     'Создание детализированной модели дома с архитектурными элементами',
     'Реализация реалистичного эффекта воды с отражениями',
     'Использование текстур для имитации строительных материалов',
@@ -149,46 +204,91 @@ export const projectFeatures = {
 // Технологии для каждого проекта
 export const projectTechnologies = {
   1: [
-    'Java',
     'Kotlin',
     'Git',
     'Gradle',
     'Android SDK',
-    'XML',
-    'MVP',
     'MVVM',
-    'Koin',
+    'Hilt',
     'REST',
-    'OkHttp',
     'Retrofit',
     'Coroutines',
     'RxJava',
     'SQLite',
     'Room',
-    'Unit Testing',
     'Fragments',
     'Single Activity',
     'Android Jetpack',
+    'Clean Architecture',
+    'Jetpack Compose',
+  ],
+  2: [
+    'Kotlin',
+    'Git',
+    'Gradle',
+    'Android SDK',
+    'MVVM',
+    'Hilt',
+    'REST',
+    'Retrofit',
+    'Coroutines',
+    'RxJava',
+    'SQLite',
+    'Room',
+    'Fragments',
+    'Single Activity',
+    'Android Jetpack',
+    'Clean Architecture',
+    'Jetpack Compose',
+  ],
+  3: [
+    'Kotlin',
+    'Git',
+    'Gradle',
+    'Android SDK',
+    'XML',
+    'MVVM',
+    'Koin',
+    'REST',
+    'Retrofit',
+    'Coroutines',
+    'RxJava',
+    'SQLite',
+    'Room',
+    'Fragments',
+    'Single Activity',
+    'Android Jetpack',
+    'Clean Architecture',
     'ConstraintLayout',
     'RecyclerView',
     'SharedPreferences',
     'Code Review',
   ],
-  2: [
+  4: [
     'Kotlin',
+    'Git',
+    'Gradle',
     'Jetpack Compose',
     'Android SDK',
+    'XML',
     'MVVM',
+    'Koin',
+    'REST',
     'Retrofit',
+    'RxJava',
     'Coroutines',
+    'SQLite',
     'Room',
-    'Unit Testing',
+    'Fragments',
+    'Single Activity',
     'Android Jetpack',
     'Material Design',
     'Clean Architecture',
+    'RecyclerView',
+    'Code Review',
     'Team Collaboration',
   ],
-  3: [
+  5: [
     'Vue.js',
     'Vite',
     'Bootstrap 5',
@@ -202,7 +302,7 @@ export const projectTechnologies = {
     'Custom Font Integration',
     'Client Communication',
   ],
-  4: [
+  6: [
     'Vue.js',
     'Vite',
     'JavaScript',
@@ -217,7 +317,7 @@ export const projectTechnologies = {
     'Командная разработка',
     'Веб-дизайн',
   ],
-  5: [
+  7: [
     'Django',
     'Python',
     'MySQL',
@@ -230,8 +330,8 @@ export const projectTechnologies = {
     'Веб-интерфейс',
     'Agile',
   ],
-  6: ['Blender', '3D Modeling', 'Texturing', 'Animation', 'Rendering', 'UV Mapping', 'Lighting'],
-  7: [
+  8: ['Blender', '3D Modeling', 'Texturing', 'Animation', 'Rendering', 'UV Mapping', 'Lighting'],
+  9: [
     'Blender',
     '3D Modeling',
     'Water Simulation',
